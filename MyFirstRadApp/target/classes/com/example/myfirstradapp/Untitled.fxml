@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.myfirstradapp.JFXController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ScrollPane prefHeight="382.0" prefWidth="600.0">
+         <content>
+            <Pane prefHeight="375.0" prefWidth="583.0">
+               <children>
+                  <Label layoutX="100.0" layoutY="33.0" text="To-do list" />
+                  <Label layoutX="318.0" layoutY="33.0" text="Finished list" />
+                  <Button fx:id="finishItem" layoutX="459.0" layoutY="199.0" mnemonicParsing="false" onAction="#finishItemEvent" prefHeight="26.0" prefWidth="120.0" text="Finish item" />
+                  <Button fx:id="addItem" layoutX="459.0" layoutY="168.0" mnemonicParsing="false" onAction="#addItemEvent" prefHeight="26.0" prefWidth="120.0" text="Add new item" />
+                  <DatePicker fx:id="itemDate" layoutX="459.0" layoutY="103.0" onAction="#datePicked" prefHeight="26.0" prefWidth="120.0" />
+                  <TextField fx:id="itemName" layoutX="459.0" layoutY="69.0" onAction="#namePicked" prefHeight="26.0" prefWidth="120.0" />
+                  <ListView fx:id="toDoList" layoutX="26.0" layoutY="69.0" prefHeight="280.0" prefWidth="200.0" />
+                  <ListView fx:id="finishedList" layoutX="250.0" layoutY="69.0" prefHeight="280.0" prefWidth="200.0" />
+                  <Button fx:id="restoreItem" layoutX="459.0" layoutY="230.0" mnemonicParsing="false" onAction="#restoreItemEvent" prefHeight="26.0" prefWidth="120.0" text="Restore item" />
+                  <Button fx:id="deleteItem" layoutX="459.0" layoutY="261.0" mnemonicParsing="false" onAction="#deleteItemEvent" prefHeight="26.0" prefWidth="120.0" text="Delete item" />
+                  <MenuButton fx:id="priorityDropdown" layoutX="459.0" layoutY="137.0" mnemonicParsing="false" onAction="#priorityDropdownEvent" prefHeight="26.0" prefWidth="120.0" text="Priority [0]">
+                    <items>
+                      <MenuItem fx:id="Priority1Button" mnemonicParsing="false" onAction="#Priority1ButtonEvent" text="Priority 1" />
+                      <MenuItem fx:id="Priority2Button" mnemonicParsing="false" onAction="#Priority2ButtonEvent" text="Priority 2" />
+                        <MenuItem fx:id="Priority3Button" mnemonicParsing="false" onAction="#Priority3ButtonEvent" text="Priority 3" />
+                    </items>
+                  </MenuButton>
+                  <Button fx:id="restoreSave" layoutX="459.0" layoutY="322.0" mnemonicParsing="false" onAction="#restoreData" prefHeight="26.0" prefWidth="120.0" text="Restore save" />
+                  <Button fx:id="buttonSave" layoutX="459.0" layoutY="292.0" mnemonicParsing="false" onAction="#saveData" prefHeight="26.0" prefWidth="120.0" text="Save" />
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>
